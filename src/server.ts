@@ -8,9 +8,9 @@ import * as views from 'koa-views'
 
 // Add your zipkin url and application name to the Zipkin options
 const exporter = new ZpagesExporter({
-  port: 4567, // default
-  startServer: true, // default
-  spanNames: ['predefined/span1', 'predefined/span2'],
+  port: 4567,
+  startServer: true,
+  spanNames: [],
 })
 tracing.registerExporter(exporter).start({ logger: log })
 
