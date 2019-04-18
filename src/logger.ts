@@ -1,9 +1,7 @@
 import pino = require('pino')
 import pinoMiddleware = require('koa-pino-logger')
 
-const options = {
+export const log = pino({
   useLevelLabels: true,
-}
-
-export const log = pino(options)
-export const loggerMiddleware = pinoMiddleware(options)
+})
+export const loggerMiddleware = pinoMiddleware({ logger: log })
